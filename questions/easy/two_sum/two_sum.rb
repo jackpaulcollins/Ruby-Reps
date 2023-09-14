@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# solves the two sum problem
+# Given an array, returns the indices of two elements that add up to a supplied target int
 class TwoSum
   def initialize(nums:, target:)
     @nums = nums
@@ -12,10 +12,8 @@ class TwoSum
 
     @nums.each_with_index do |n, i|
       need = @target - n
-      if hash.key?(need)
-        puts "Indices #{hash[need]} and #{i} add up to #{@target}"
-        break
-      end
+      return [hash[need], i] if hash.key?(need)
+
       hash[n] = i
     end
   end

@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
-# spec/two_sum_spec.rb
-
-require_relative './two_sum' # Adjust the path as needed
+require_relative './two_sum'
 require 'rspec'
 
 describe TwoSum do
@@ -12,7 +10,7 @@ describe TwoSum do
         nums = [2, 7, 11, 15]
         target = 9
 
-        expect { TwoSum.new(nums: nums, target: target).solve }.to output("Indices 0 and 1 add up to 9\n").to_stdout
+        expect(TwoSum.new(nums: nums, target: target).solve).to eq([0, 1])
       end
     end
 
@@ -21,7 +19,7 @@ describe TwoSum do
         nums = [4, 8, 9, 11, 9]
         target = 18
 
-        expect { TwoSum.new(nums: nums, target: target).solve }.to output("Indices 2 and 4 add up to 18\n").to_stdout
+        expect(TwoSum.new(nums: nums, target: target).solve).to eq([2, 4])
       end
     end
   end
